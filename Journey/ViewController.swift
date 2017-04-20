@@ -13,6 +13,7 @@ class ViewController: UIViewController
 
     override func viewDidLoad()
     {
+        var myJournalObjectTwo = UIViewController()
         
         super.viewDidLoad()
         

@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VSp-lQ-xJe" id="fbL-aH-BWU">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="-82" y="137"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Q5x-qH-SJt">
             <objects>
-                <viewController id="Tsl-1g-ia9" sceneMemberID="viewController">
+                <viewController id="Tsl-1g-ia9" customClass="detailViewController" customModule="Journey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ytD-vD-DMu"/>
                         <viewControllerLayoutGuide type="bottom" id="B0b-dT-1ZB"/>
@@ -86,6 +86,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="DJU-kg-F8q"/>
+                    <connections>
+                        <outlet property="myJournalTextView" destination="3Cl-vE-f4t" id="2rW-Gr-TdA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QfP-Wi-yvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

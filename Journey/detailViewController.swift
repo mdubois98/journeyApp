@@ -9,18 +9,20 @@
 import UIKit
 
 class detailViewController: UIViewController {
+    @IBOutlet weak var myJournalTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var myJournalObject = myJournalTextView.text
         
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+        func prepare(for segue: UIStoryboardSegue, sender: Any?)
         {
             
             let storyVC = segue.destination as!
-            StoryViewController
+           ViewController
             
-            storyVC.myWordObjectTwo = myWordObject
+            ViewController.myJournalObjectTwo = myJournalObject
             
         }
 
