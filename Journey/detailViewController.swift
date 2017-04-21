@@ -8,24 +8,25 @@
 
 import UIKit
 
-class detailViewController: UIViewController {
+class detailViewController: UIViewController
+{
+    var journalDetail: JournalClass!
+    
     @IBOutlet weak var myJournalTextView: UITextView!
+    
+    @IBOutlet weak var photo: UIImageView!
+    
+    
+    
+ //var data = myJournalTextView.text
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
-        var myJournalObject = myJournalTextView.text
+       
         
-        func prepare(for segue: UIStoryboardSegue, sender: Any?)
-        {
-            
-            let storyVC = segue.destination as!
-           ViewController
-            
-            ViewController.myJournalObjectTwo = myJournalObject
-            
-        }
-
+        
 
         // Do any additional setup after loading the view.
     }
@@ -35,6 +36,15 @@ class detailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func saveButton(_ sender: AnyObject)
+    {
+        
+        journalDetail.writingEntry = myJournalTextView.text
+        journalDetail.image = photo.image
+        
+        
+        
+    }
 
     /*
     // MARK: - Navigation

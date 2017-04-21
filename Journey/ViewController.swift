@@ -10,18 +10,36 @@ import UIKit
 
 class ViewController: UIViewController
 {
+    @IBOutlet weak var myTableView: UITableView!
 
+    var myJournalObjectTwo = [String]()
+    //set story = to arry
+    
     override func viewDidLoad()
     {
-        var myJournalObjectTwo = UIViewController()
+        
         
         super.viewDidLoad()
-        
+    }
+    
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+        {
+            
+            let data = segue.destination as!
+            detailViewController
+            
+            //data.myJournalTextView = myTableView
+            
+            
+            //ViewController.myJournalObjectTwo = myJournalObject
+            
+        }
+
         
     }
 
   
 
 
-}
+
 
