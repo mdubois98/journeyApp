@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class detailViewController: UIViewController
+class detailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
     var journalDetail: JournalClass!
     
@@ -19,12 +20,14 @@ class detailViewController: UIViewController
     
     
  //var data = myJournalTextView.text
-
+let imagePicker = UIImagePickerController()
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-       
+        imagePicker.delegate = self
+        photo.image = journalDetail.image
+
         
         
 
@@ -45,6 +48,34 @@ class detailViewController: UIViewController
         
         
     }
+    //connect IBAction of change image 
+    
+    @IBAction func addPhoto(_ sender: AnyObject)
+    
+    {
+    getPhotoLibrary()
+    }
+    func getPhotoLibrary()
+    {
+        
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        imagePicker.dismiss(animated: true)
+            
+        {
+            let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            
+            self.photo.image = selectedImage
+            
+        }
+    }
+    
+
 
     /*
     // MARK: - Navigation
